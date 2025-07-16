@@ -21,4 +21,8 @@ public class SoftwareEngineerService {
     public void insertSoftwareEngineer(SoftwareEngineer softwareEngineer) {
         softwareEngineerRepository.save(softwareEngineer);
     }
+
+    public SoftwareEngineer getSoftwareEngineerById(Integer id) {
+        return softwareEngineerRepository.findById(id).orElseThrow(() -> new IllegalStateException("Id value: " + id + " not found"));
+    }
 }
